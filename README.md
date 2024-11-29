@@ -1,11 +1,10 @@
 # Snowflake-Cafe
 
 ## Foto:
-- ![image](https://github.com/user-attachments/assets/136ca54b-8de8-4630-aabd-d27ab1dc725b)
-- ![image](https://github.com/user-attachments/assets/eedabca9-ff1c-4eb5-955f-55b65337b893)
-- ![image](https://github.com/user-attachments/assets/c689f827-6f44-453b-ba87-11ca9b0e609e)
-- ![image](https://github.com/user-attachments/assets/414feaed-d832-444d-a90e-6ba42810a411)
-- ![image](https://github.com/user-attachments/assets/9fa847f3-5f0a-48d2-94c6-b70001064713)
-
-
-
+- ![imagen](https://github.com/user-attachments/assets/7d928235-536d-4539-9d3c-f48a1f61a764)
+- ![imagen](https://github.com/user-attachments/assets/b3431a81-2ba2-4c62-8d96-0a854a7c3c5c)
+- ![imagen](https://github.com/user-attachments/assets/eafc1a19-83dc-499b-8de5-e4e7753cd92e)
+- ![imagen](https://github.com/user-attachments/assets/3a56f8fc-d3ca-4791-ae01-1a395ebab542)
+- ![imagen](https://github.com/user-attachments/assets/0f8c00a3-1839-47f0-babe-f26ffbfaee25)
+- ![imagen](https://github.com/user-attachments/assets/e8422612-9d28-4915-9a39-c759b62183ce)
+- ![imagen](https://github.com/user-attachments/assets/6577651e-6d47-46d4-9168-13ac0191a94d)
