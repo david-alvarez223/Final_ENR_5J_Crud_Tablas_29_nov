@@ -1,0 +1,78 @@
+{% extends 'script.html' %} {%load static%}
+
+{% block cuerpo %}
+<div class="row"><!-- la fila -->
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"><!-- columna izquierda -->
+        <h1>Register</h1>
+            <div class="card"> <!-- tarjeta -->
+                <div class="card-body">
+                    <form action="registerCafe/" method="POST"> {% csrf_token %}<!-- formulario -->
+                        <div class="form-group">
+                            <input type="text" id="txtid" name="txtid" class="form-control" placeholder="Cafe id" minLength="3" maxLenght="6" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtname" name="txtname" class="form-control" placeholder="Cafe_dir" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtman" name="txtman" class="form-control" placeholder="Cafe Manager" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtphone" name="txtphone" class="form-control" placeholder="Phone Number" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtcity" name="txtcity" class="form-control" placeholder="City" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtmail" name="txtmail" class="form-control" placeholder="Email" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="numprice" name="numprice" class="form-control" value="1" min="1" max="9" required>
+                        </div>
+                        
+                        <div class="form-group py-3">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form> <!-- formulario -->
+                </div>
+            </div><!-- tarjeta -->
+    </div><!-- columna izquierda -->
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-4"><!-- columna derecha -->
+        <h1>Cafe List</h1>
+        <img class="w-50" src="{%static 'img/products.jpg'%}" alt="what" width="100" height="100"/>
+        <div class="table-responsive"> <!-- tavla responsiva -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Dir</th>
+                        <th scope="col">Employees</th>
+                        <th scope="col">Manager</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Email</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in cafe1 %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.cafe_id}}</td>
+                        <td>{{c.cafe_dir}}</td>
+                        <td>{{c.cafe_num}}</td>
+                        <td>{{c.cafe_man}}</td>
+                        <td>{{c.cafe_phone}}</td>
+                        <td>{{c.cafe_city}}</td>
+                        <td>{{c.cafe_mail}}</td>
+                        <td><a href="selectCafe/{{c.cafe_id}}" class="btn btn-info">Edit</a></td>
+                        <td><a href="deleteCafe/{{c.cafe_id}}" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div><!-- tavla responsiva -->
+    </div><!-- columna derecha -->
+</div><!-- la fila -->
+{% endblock %}

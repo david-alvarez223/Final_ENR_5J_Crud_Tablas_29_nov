@@ -1,0 +1,62 @@
+{% extends 'script.html' %} {%load static%}
+
+{% block cuerpo %}
+<div class="row"><!-- la fila -->
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"><!-- columna izquierda -->
+        <h1>Register</h1>
+            <div class="card"> <!-- tarjeta -->
+                <div class="card-body">
+                    <form action="registerClient/" method="POST"> {% csrf_token %}<!-- formulario -->
+                        <div class="form-group py-3">
+                            <input type="text" id="txtid" name="txtid" class="form-control" placeholder="Client id" minLength="3" maxLenght="6" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtname" name="txtname" class="form-control" placeholder="Client name" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="txtfreq" name="txtfreq" class="form-control" placeholder="Client frequency" maxLenght="100" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <input type="text" id="numrating" name="numrating" class="form-control" value="1" min="1" max="9" required>
+                        </div>
+                        <div class="form-group py-3">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form> <!-- formulario -->
+                </div>
+            </div><!-- tarjeta -->
+    </div><!-- columna izquierda -->
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-4"><!-- columna derecha -->
+        <h1>Client List</h1>
+        <img class="w-50" src="{%static 'img/clients.jpg'%}" alt="what" width="100" height="100"/>
+        <div class="table-responsive"> <!-- tavla responsiva -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Ratings</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in clients1 %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.client_id}}</td>
+                        <td>{{c.client_name}}</td>
+                        <td>{{c.client_freq}}</td>
+                        <td>{{c.client_rating}}</td>
+                        <td><a href="selectClient/{{c.client_id}}" class="btn btn-info">Edit</a></td>
+                        <td><a href="deleteClient/{{c.client_id}}" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div><!-- tavla responsiva -->
+    </div><!-- columna derecha -->
+</div><!-- la fila -->
+{% endblock %}
